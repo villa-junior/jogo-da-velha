@@ -39,7 +39,11 @@ public class JogoDaVelhaView extends JFrame{
     
     //Componentes visual que terão eventos "escutados"
     public void setActionListeners(ActionListener listener) {
-
+        for(int linha = 0;linha < 3; linha++){
+            for(int coluna = 0; coluna < 3; coluna++){
+                botoes[linha][coluna].addActionListener(listener);
+            }
+        }
     }
     
     //Getters

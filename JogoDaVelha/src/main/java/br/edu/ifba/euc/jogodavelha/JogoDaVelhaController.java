@@ -1,18 +1,27 @@
 package br.edu.ifba.euc.jogodavelha;
 
-public class JogoDaVelhaController {
-    //Defina uma view e uma model privadas
-    
-    //Defina um construtor que recebe uma view e uma model por parâmetro
-    //O construtor também deve controlar os eventos da view:
-    //      this.view.setActionListeners (this);
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+public class JogoDaVelhaController implements ActionListener{
 
-    //Implemente/Sobrescreva o método obrigatório actionPerformed
-    /*
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    private JogoDaVelhaView view;
 
+    public JogoDaVelhaController(JogoDaVelhaView view) {
+        this.view = view;
+        this.view.setActionListeners(this); //Controlar os eventos da view
     }
-    */
+    
+    
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        for(int linha = 0;linha < 3; linha++){
+            for(int coluna = 0; coluna < 3; coluna++){
+                if (ae.getSource() == view.getBotoes()[linha][coluna]) {
+                    System.out.println("Clicou no botao " + linha + ", " + coluna);
+                }
+            }
+        }
+    }
+    
 }
