@@ -14,7 +14,7 @@ public class JogoDaVelhaModel {
 
     }
 
-    private void limpaTabuleiro() {
+    public void limpaTabuleiro() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 posicoes[i][j] = "";
@@ -36,8 +36,8 @@ public class JogoDaVelhaModel {
             }
             
             if (posicoes[0][i].equals(jogadoraDaVez)
-                    && posicoes[0][i].equals(jogadoraDaVez)
-                    && posicoes[0][i].equals(jogadoraDaVez)) {
+                    && posicoes[1][i].equals(jogadoraDaVez)
+                    && posicoes[2][i].equals(jogadoraDaVez)) {
                 return true;
             }
         }
@@ -67,6 +67,11 @@ public class JogoDaVelhaModel {
                             ? "O" : "X";
     }
         
+    public void efetivaJogada(int linha, int coluna){
+        posicoes[linha][coluna] = jogadoraDaVez; 
+        posicoesFaltantes--;
+    }
+    
     public String[][] getPosicoes() {
         return posicoes;
     }

@@ -10,7 +10,8 @@ public class JogoDaVelha {
             @Override 
             public void run() { 
                 JogoDaVelhaView view = new JogoDaVelhaView();
-                new JogoDaVelhaController(view);
+                JogoDaVelhaModel model = new JogoDaVelhaModel();
+                new JogoDaVelhaController(view, model);
                 view.setVisible(true);
             }
         });

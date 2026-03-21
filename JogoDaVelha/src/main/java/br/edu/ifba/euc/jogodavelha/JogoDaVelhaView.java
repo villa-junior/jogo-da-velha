@@ -54,4 +54,6 @@ public class JogoDaVelhaView extends JFrame{
     public JLabel getMensagem() {
         return mensagem;
     }
+    
+    
 }
